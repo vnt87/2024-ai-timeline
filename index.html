@@ -40,6 +40,27 @@
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    /* Make open source events more prominent */
+    .event:has(.tag.open-source) {
+      background-color: #e8f5e9;  /* Light green background */
+      border-left: 4px solid #4caf50;
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Slightly dim API-only events */
+    .event:has(.tag.api-only) {
+      background-color: #fafafa;
+      border-left: 4px solid #f44336;
+    }
+    
+    /* Hover effects */
+    .event:has(.tag.open-source):hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
     .event h4 {
       margin: 0;
@@ -668,6 +689,14 @@
     </div>
   </div>
   <script>
+    function updateCounts() {
+      const openSourceCount = document.querySelectorAll('.tag.open-source').length;
+      const apiOnlyCount = document.querySelectorAll('.tag.api-only').length;
+      
+      document.getElementById('open-source-count').textContent = openSourceCount;
+      document.getElementById('api-only-count').textContent = apiOnlyCount;
+    }
+
     function filterEvents(filter) {
         // Update active button state
         document.querySelectorAll('.toggle-button').forEach(button => {
@@ -697,7 +726,13 @@
             );
             month.style.display = visibleEvents.length > 0 ? 'flex' : 'none';
         });
+
+        // Update counts after filtering
+        updateCounts();
     }
+
+    // Initial count update
+    document.addEventListener('DOMContentLoaded', updateCounts);
   </script>
 </body>
 </html>
