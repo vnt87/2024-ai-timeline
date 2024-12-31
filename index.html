@@ -134,9 +134,25 @@
     .toggle-button.show-all.active {
       background-color: #2196f3;
     }
+    .github-link {
+      text-align: center;
+      padding: 10px;
+      background-color: #24292e;
+      color: white;
+    }
+    .github-link a {
+      color: white;
+      text-decoration: none;
+    }
+    .github-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <div class="github-link">
+    <a href="https://github.com/Vaibhavs10/2024-ai-timeline" target="_blank">View on GitHub</a>
+  </div>
   <div class="toggle-container">
     <button class="toggle-button show-all active" onclick="filterEvents('all')">Show All</button>
     <button class="toggle-button open-source" onclick="filterEvents('open-source')">Open Weights Only</button>
