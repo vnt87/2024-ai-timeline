@@ -181,6 +181,17 @@
     <button class="toggle-button open-source" onclick="filterEvents('open-source')">Open Weights Only</button>
     <button class="toggle-button api-only" onclick="filterEvents('api-only')">API Only</button>
   </div>
+  <div class="counter-container" style="text-align: center; padding: 20px; background-color: white; margin: 10px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <span class="counter-item">
+      <span class="counter-label" style="color: #4caf50; font-weight: bold;">Open Source Models:</span>
+      <span class="counter-number" id="open-source-count" style="font-size: 1.2em; margin-left: 5px; color: #2e7d32;">0</span>
+    </span>
+    <span style="margin: 0 20px; color: #ddd;">|</span>
+    <span class="counter-item">
+      <span class="counter-label" style="color: #f44336; font-weight: bold;">API Only Models:</span>
+      <span class="counter-number" id="api-only-count" style="font-size: 1.2em; margin-left: 5px; color: #c62828;">0</span>
+    </span>
+  </div>
   <div class="timeline">
     <!-- February 2024 -->
     <div class="month">
@@ -508,7 +519,7 @@
         <p>KLING 1.5 is released.</p>
         <span class="tag api-only">API Only</span>
       </div>
-      <div class="event"></div>
+      <div class="event">
         <h4>Yi Coder</h4>
         <p>01 AI releases Yi-Coder (<a href="https://huggingface.co/collections/01-ai/yi-coder-66bdb00f5bdd611f9a008f30" target="_blank">open weights</a>).</p>
         <span class="tag open-source">Open Weights</span>
